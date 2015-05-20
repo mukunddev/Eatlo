@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html lang="en" ng-app="EatLo" class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>EatLo</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/style/app.css">
+  
+</head>
+<body ng-controller="MainCtrl">
+  <div ng-include="'app/common/header.html'"></div>
+ 
+  <header id="page-top">
+    <div class="container">
+        <div ng-view></div>
+    </div>
+  </header>
+  <script src="../bower_components/angular/angular.js"></script>
+  <script src="../bower_components/angular-route/angular-route.js"></script>
+  <script src="../bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+  <script src="../bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+  <script src="../bower_components/angular-local-storage/dist/angular-local-storage.min.js"></script>
+  <script src="../bower_components/moment/moment.js"></script>
+  <script src="../bower_components/angular-moment/angular-moment.js"></script>
+
+
+  
+  <script src="app/app.js"></script>
+  <script src="components/service/factory.js"></script>
+  
+  <script type="text/javascript" src="components/filter/filter.js"></script>
+  <script src="components/main.ctrl.js"></script>
+  <script type="text/javascript" src="components/directive/directive.js"></script>
+  
+
+  <script src="app/outlets/outlet.js"></script>
+  <script src="app/outlets/outlet.ctrl.js"></script>
+
+  <script src="app/menu/menu.js"></script>
+  <script src="app/menu/menu.ctrl.js"></script>
+  
+</body>
+</html>

@@ -1,0 +1,46 @@
+<div class="col-sm-12 category-title">
+       <span class="category-name">Menu</span>
+       <ul class="categories">
+       		<li class="btn btn-sm category-btn" ng-class="{'active-category-btn': category.id === menu.selectedCategory.id}" ng-repeat= "category in menu.categories |orderBy: 'sr'" ng-click="changeCategory(category)"> 
+       			{{category.name}}
+       		</li>
+       </ul>
+</div>
+
+<div class="col-sm-9">
+  <!-- Active product -->
+    <div class="col-sm-4 "  ng-repeat="product in menu.products | orderBy: 'sr'" ng-click="addToCart(product)" ng-if="product.category_id === menu.selectedCategory.id || menu.selectedCategory.id === null">
+    	    <div class="thumbnail bootsnipp-thumb product-list">
+    	    	<img class="category-img" ng-src="{{getcategoryImage(product.attribute_bg)}}" ng-if="product.attribute_bg">
+        	    <a href="">
+            		<img ng-src="{{getImageUrl(product.photo_url)}}" alt="Image Tiles Full width">
+            	</a>
+    	    	<div class="caption">
+    	        	<div class="product-name">{{product.name}}</div>
+    	        	<div class="btn product-price-btn">{{product.price}}</div>
+    	        	<div class="product-desc">{{product.description}}</div>
+    	    	</div>
+    	    </div>
+    </div>
+    <!-- old product -->
+
+    <div class="col-sm-4 "  ng-repeat="product in menu.old_products | orderBy: 'sr'" ng-if="product.category_id === menu.selectedCategory.id || menu.selectedCategory.id === null" >
+          <div class="thumbnail bootsnipp-thumb">
+            <img  class="category-img" ng-src="/assets/img/sold-out.png">
+            
+              <a href="">
+                <img ng-src="{{getImageUrl(product.photo_url)}}" alt="Image Tiles Full width">
+              </a>
+            <div class="caption">
+                <div class="product-name">{{product.name}}</div>
+                <div class="btn">{{product.price}}</div>
+                <div class="product-desc">{{product.description}}</div>
+            </div>
+          </div>
+    </div>
+</div>
+<div class="col-sm-3 top-margin20">
+    	<div show-cart-item = "menu.cartItem" total-price = "menu.totalPrice" edit-cart="editCart(prod,type)"> </div>
+ </div>
+
+

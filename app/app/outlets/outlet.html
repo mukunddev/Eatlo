@@ -1,0 +1,14 @@
+<div class="row outlet">
+    <div class="col-sm-12 bottom-margin20">
+        <h3>Select Delivery Location</h3>
+    </div>
+
+    <div class="col-sm-12">
+        <div class="col-sm-offset-4 col-sm-4" ng-repeat="outlet in eatlo.outlets" ng-click="chooseOutlet(outlet)">
+            <div class="outlet-menu">{{outlet.name}}
+                <span class="glyphicon glyphicon-chevron-right pull-right"></span>
+            </div>
+        </div>
+    </div>
+
+</div>

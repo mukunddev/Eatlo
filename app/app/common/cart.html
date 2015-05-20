@@ -1,0 +1,36 @@
+<div class="row cart" ng-if="showCartItem.length>0">
+	<div class="cart-title">
+		<span class="glyphicon glyphicon-shopping-cart"></span>
+		{{totalItem}} items of {{showCartItem.length}} products.
+		<hr class="bold-line" />
+	</div>
+		<div class=" cart-container">
+		<div class=" bottom-margin20" ng-repeat ="item in showCartItem">
+			<div class=" cart-product-name" style="margin-bottom:30px;">{{item.name}}</div>
+
+			<div class=" cart-attr">
+				{{item.default_selected}}
+			</div>
+			<div class="cart-attr">
+				Rs. {{item.default_selected * item.price}}
+			</div>
+			<div class="action-wrapper">
+				<div class="cart-action" ng-click="editCart({prod:item, type:'removeitem'})">
+					<span class="glyphicon glyphicon-minus" ></span>
+				</div>
+				<div class="cart-action" ng-click="editCart({prod:item, type:'additem'})">
+					<span class="glyphicon glyphicon-plus" ></span>
+				</div>
+				<div class="cart-action" ng-click="editCart({prod:item, type:'removeitems'})">
+					<span class="glyphicon glyphicon-remove" ></span>
+				</div>
+			</div>
+
+			
+			<!-- <div class="bold-line" ></div> -->
+		</div>
+	</div>
+	<div class=" total-price" >
+		Total : {{totalPrice | tofixed}}
+	</div>
+</div>
