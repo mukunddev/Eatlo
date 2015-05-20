@@ -3,12 +3,11 @@
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header page-scroll col-sm-7">
             
-            <div class="navbar-brand" style="padding: 14px;" ng-if="setting.outlet.name">
+            <div class="navbar-brand"  ng-if="setting.outlet.name">
                 <span class="location">{{setting.outlet.name}} </span>
+                <a ng-href="#/outlets" class="header-link">Change Location </a>
             </div>
-            <div class="navbar-brand " style="padding: 14px;" ng-if="setting.outlet.name">
-               <a ng-href="#/outlets" class="header-link">Change Location </a>
-            </div>
+           
             <div class="navbar-brand pull-right" >
                 <img   src="../../assets/img/Eatlo_Logo_square.png" alt="eatlo logo" />
             </div>
